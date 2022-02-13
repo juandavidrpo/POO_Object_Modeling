@@ -4,11 +4,11 @@ public class PlanetarySystem {
     private double mass;
     private double density;
     private int diameter;
-    private long distanceSun;
+    private double distanceSun;
     private int identifier;
     private String name;
 
-    public PlanetarySystem(double mass, double density, int diameter, long distanceSun, int identifier, String name) {
+    public PlanetarySystem(double mass, double density, int diameter, double distanceSun, int identifier, String name) {
         this.mass = mass;
         this.density = density;
         this.diameter = diameter;
@@ -41,11 +41,11 @@ public class PlanetarySystem {
         this.diameter = diameter;
     }
 
-    public long getDistanceSun() {
+    public double getDistanceSun() {
         return distanceSun;
     }
 
-    public void setDistanceSun(long distanceSun) {
+    public void setDistanceSun(double distanceSun) {
         this.distanceSun = distanceSun;
     }
 
