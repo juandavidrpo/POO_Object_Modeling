@@ -1,7 +1,3 @@
-/**
- * Se importa la clase com.company
- * y las librerias SimpleDateFormat, ArrayList, Date y Scanner.
- */
 package com.company;
 
 import java.text.SimpleDateFormat;
@@ -11,6 +7,9 @@ import java.util.Scanner;
 
 /**
  * Representa la clase principal "Main".
+ * @version 1.0.0 2022-02-14
+ * @author Juan David Rojas.
+ * @since 1.0.0
  */
 public class Main {
 
@@ -38,16 +37,15 @@ public class Main {
      * Representa un bucle for de 10 repeticiones.
      */
             for(int i = 0; i <= 9; i++) {
-
             System.out.println("1.Moto\n2.Lancha\n3.Carro\n4.Bicicleta\n5.Camion\nEscriba el número del vehiculo a crear");
             decision = read.nextInt();
 
-            System.out.println("A continuacion ingrese los datos del vehiculo");
+            System.out.println("Ingrese los datos del vehiculo");
 
             System.out.println("Numero de pasajeros: ");
             nPassengers = read.nextInt();
 
-            System.out.println("¿Tiene tripulacion?. Escriba True o false: ");
+            System.out.println("¿Tiene tripulación?. Escriba True o false: ");
             tripulation = read.nextBoolean();
 
             System.out.println("Numero de ruedas: ");
@@ -92,7 +90,7 @@ public class Main {
      * Representa el caso 2 para el atributo booleano de la lancha.
      */
                 case 2:
-                    System.out.println("¿Tiene ancla? Responder true o false");
+                    System.out.println("¿Tiene ancla? Responde true o false");
                     boolean anchors = read.nextBoolean();
                     Boat boat = new Boat(nPassengers, tripulation, nWheels, testDate, scrolling, anchors);
                     boats.add(boat);
@@ -120,7 +118,7 @@ public class Main {
      * Representa el caso 5 para el atributo booleano del camion.
      */
                 case 5:
-                    System.out.println("Ingrese la altura en metros. Por favor separe por coma(,)");
+                    System.out.println("Ingrese la altura en metros");
                     double height = read.nextDouble();
                     Truck truck = new Truck(nPassengers, tripulation, nWheels, testDate, scrolling, height);
                     trucks.add(truck);
@@ -133,27 +131,27 @@ public class Main {
      * Representa varias sentencias de "if" para imprimir por consola los vehiculos creados.
      */
             if(!boats.isEmpty()){
-                System.out.println("listado de lanchas:");
+                System.out.println("lista de lanchas:");
                     System.out.println(boats);
             }
 
             if(!cars.isEmpty()){
-                System.out.println("listado de carros:");
+                System.out.println("lista de carros:");
                     System.out.println(cars);
             }
 
             if(!bicycles.isEmpty()){
-                System.out.println("listado de bicicletas:");
+                System.out.println("lista de bicicletas:");
                     System.out.println(bicycles);
             }
 
             if(!motorcycles.isEmpty()){
-                System.out.println("listado de motos:");
+                System.out.println("lista de motos:");
                     System.out.println(motorcycles);
             }
 
             if(!trucks.isEmpty()){
-                System.out.println("listado de camiones:");
+                System.out.println("lista de camiones:");
                     System.out.println(trucks);
             }
 
