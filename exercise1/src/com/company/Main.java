@@ -1,11 +1,11 @@
 /**
  * Se importa el paquete com.company
- * y las librerias JOptionPane y ArrayList.
+ * y las librerias Scanner y ArrayList.
  */
 package com.company;
 
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Representa la clase principal "Main"
@@ -16,12 +16,14 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+
 /**
  * Representa los atributos a usar.
  */
-        String selection = null;
         final double gravity = 6.673E-11;
-        int end = 0;
+        int planet1, planet2, end = 0, selection = 0;
+
+        Scanner read = new Scanner(System.in);
 /**
  * Representa un ArrayList del sistema solar, con datos especificos de los planetas y el sol.
  */
@@ -48,96 +50,55 @@ public class Main {
         /**
          * Representa un bucle while que no deja finalizar el programa hasta que el usuario decida hacerlo.
          */
+
         while (end == 0) {
-        /**
-         * Representa el menú principal con las opciones a calcular.
-         */
-            int selectionMenu = JOptionPane.showOptionDialog(null, "Calcular atracción gravitatoria", "Menú",
-                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-                    new Object[]{"Entre dos cuerpos", "De un cuerpo con respecto al sol", "Cerrar"}, "opcion 1");
-        /**
-         * Representa la sentencia switch para navegar entre las opciones del menú.
-         */
-            switch (selectionMenu + 1) {
+
+            /**
+             * Representa la sentencia switch para navegar entre las opciones del menú.
+             */
+
+
+            switch (selection + 1) {
                 /**
-                 * El caso 1 representa la opción de elegir entre dos cuerpos del sistema solar
+                 * Representa la opción a elegir entre dos cuerpos del sistema solar
                  * para después hacer el cálculo gravitacional.
                  */
                 case 1:
-                String[] options = new String[system.size()];
+                    System.out.println("Calcular atracción gravitatoria");
+                    System.out.println("Selecciona un cuerpo del sistema solar:");
+                    System.out.println("0.sol\n1.Mercurio\n2.Venus\n3.Tierra\n4.Marte\n5.Júpiter\n6.Saturno\n7.Urano\n8.Neptuno\n");
+                    planet1 = read.nextInt();
 
-                for (int i = 0; i < system.size(); i++) {
-                    options[i] = system.get(i).getIdentifier() + ". " + system.get(i).getName();
-                }
+                    System.out.println("Selecciona otro cuerpo del sistema");
+                    System.out.println("0.sol\n1.Mercurio\n2.Venus\n3.Tierra\n4.Marte\n5.Júpiter\n6.Saturno\n7.Urano\n8.Neptuno\n");
+                    planet2 = read.nextInt();
 
-                String planet1 = (String) JOptionPane.showInputDialog(null, "Selecciona un planeta y presiona aceptar",
-                        selection, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-
-        /**
-         * Representa el índice de la selección del planeta que se haga en el primer menú desplegable.
-         */
-                    int indexPlanet1 = Integer.parseInt(planet1.split(". ")[0]) - 1;
-
-                String planet2 = (String) JOptionPane.showInputDialog(null, "Selecciona otro planeta y presiona aceptar",
-                        selection, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-
-                    if(planet1 == planet2){
+                    if (planet1 == planet2) {
                         throw new IllegalArgumentException("No se puede calcular el mismo cuerpo");
                     }
 
-        /**
-         * Representa el índice de la selección del planeta que se haga en el segundo menú desplegable.
-         */
-                    int indexPlanet2 = Integer.parseInt(planet2.split(". ")[0]) - 1;
-
-        /**
-         * Representa el cálculo de restar la distancia de dos cuerpos con respecto al sol
-         * para identificar la distancia de ambos cuerpos.
-         */
-                    double distancePlanet = Math.abs(system.get(indexPlanet1).getDistanceSun() - system.get(indexPlanet2).getDistanceSun());
-        /**
-         * Representa el cálculo para elevar la distancia al cuadrado.
-         */
+                    /**
+                     * Representa el cálculo de restar la distancia de dos cuerpos con respecto al sol
+                     * para identificar la distancia de ambos cuerpos.
+                     */
+                    double distancePlanet = Math.abs(system.get(planet1).getDistanceSun() - system.get(planet2).getDistanceSun());
+                    /**
+                     * Representa el cálculo para elevar la distancia al cuadrado.
+                     */
                     double squaredDistance = Math.pow(distancePlanet, 2);
 
-        /**
-         * Representa la fórmula de la atracción gravitatoria para calcular la atracción de dos cuerpos.
-         */
-                    double attraction = gravity * ((system.get(indexPlanet1).getMass() * (system.get(indexPlanet2).getMass()) / squaredDistance));
+                    /**
+                     * Representa la fórmula de la atracción gravitatoria para calcular la atracción de dos cuerpos.
+                     */
+                    double attraction = gravity * ((system.get(planet1).getMass() * (system.get(planet2).getMass()) / squaredDistance));
                     System.out.println("La atracción gravitatoria de ambos cuerpos es de: " + attraction + " N");
-                break;
-
-        /**
-         * El caso 2 representa la opción directa para calcular un cuerpo y el sol.
-         */
-                case 2:
-                    String[] option = new String[system.size()];
-
-                    for (int i = 0; i < system.size(); i++) {
-                        option[i] = system.get(i).getIdentifier() + ". " + system.get(i).getName();
-                    }
-
-                    String planet = (String) JOptionPane.showInputDialog(null, "Selecciona un planeta y presiona aceptar",
-                            selection, JOptionPane.QUESTION_MESSAGE, null, option, option[1]);
-        /**
-         * Representa el índice del cuerpo seleccionado.
-         */
-                    int indexPlanet = Integer.parseInt(planet.split(". ")[0]) - 1;
-
-        /**
-         * Representa el cálculo para elevar al cuadrado la distancia del cuerpo seleccionado.
-         */
-                    double squaredDistances = Math.pow((system.get(indexPlanet).getDistanceSun()), 2);
-
-        /**
-         * Representa la fórmula de la atracción gravitatoria para calcular la atracción de un cuerpo
-         * con respecto al sol.
-         */
-                    double attractions = gravity * ((system.get(indexPlanet).getMass() * sun.getMass()) / squaredDistances);
-                    System.out.println("La atracción gravitatoria de ambos cuerpos es de: " + attractions + " N");
+                    System.out.println("\n¿Desea continuar el programa?");
+                    System.out.println("0.Si\n1.No");
+                    end = read.nextInt();
                     break;
+
                 default:
-                end = 1;
+                    end = 1;
             }
         }
     }
