@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Representa la clase Truck que extiende de la clase Vehicle.
- * @version 1.0.0 2022-02-14
+ * @version 1.0.0 2022-02-15
  * @author Juan David Rojas.
  * @since 1.0.0
  */

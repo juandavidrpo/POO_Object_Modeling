@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * Representa la clase principal "Main".
- * @version 1.0.0 2022-02-14
+ * @version 1.0.0 2022-02-15
  * @author Juan David Rojas.
  * @since 1.0.0
  */
