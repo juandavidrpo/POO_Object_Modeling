@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 /**
- * Reprenseta la clase principal "Main"
+ * Representa la clase principal "Main"
  * @version 1.0.0 2022-02-14
  * @author Juan David Rojas.
  * @since 1.0.0
@@ -60,8 +60,8 @@ public class Main {
          */
             switch (selectionMenu + 1) {
                 /**
-                 * El caso 1 representa la opcion de elegir entre dos cuerpos del sistema solar
-                 * para despues hacer el calculo gravitacional.
+                 * El caso 1 representa la opción de elegir entre dos cuerpos del sistema solar
+                 * para después hacer el cálculo gravitacional.
                  */
                 case 1:
                 String[] options = new String[system.size()];
@@ -101,12 +101,11 @@ public class Main {
                     double squaredDistance = Math.pow(distancePlanet, 2);
 
         /**
-         * Representa la formula de la atracción gravitatoria para calcular la atracción de dos cuerpos.
+         * Representa la fórmula de la atracción gravitatoria para calcular la atracción de dos cuerpos.
          */
                     double attraction = gravity * ((system.get(indexPlanet1).getMass() * (system.get(indexPlanet2).getMass()) / squaredDistance));
                     System.out.println("La atracción gravitatoria de ambos cuerpos es de: " + attraction + " N");
                 break;
-
 
         /**
          * El caso 2 representa la opción directa para calcular un cuerpo y el sol.
@@ -126,12 +125,12 @@ public class Main {
                     int indexPlanet = Integer.parseInt(planet.split(". ")[0]) - 1;
 
         /**
-         * Representa el calculo para elevar al cuadrado la distancia del cuerpo seleccionado.
+         * Representa el cálculo para elevar al cuadrado la distancia del cuerpo seleccionado.
          */
                     double squaredDistances = Math.pow((system.get(indexPlanet).getDistanceSun()), 2);
 
         /**
-         * Representa la formula de la atracción gravitatoria para calcular la atracción de un cuerpo
+         * Representa la fórmula de la atracción gravitatoria para calcular la atracción de un cuerpo
          * con respecto al sol.
          */
                     double attractions = gravity * ((system.get(indexPlanet).getMass() * sun.getMass()) / squaredDistances);

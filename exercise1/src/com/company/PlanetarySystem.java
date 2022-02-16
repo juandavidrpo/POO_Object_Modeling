@@ -39,7 +39,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getMass.
+     * Representa el método getMass.
      * @return la masa de un cuerpo.
      */
 
@@ -48,7 +48,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setMass.
+     * Representa el método setMass.
      * @param mass de tipo double.
      */
     public void setMass(double mass) {
@@ -56,7 +56,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getDensity.
+     * Representa el método getDensity.
      * @return la densidad de un cuerpo.
      */
     public double getDensity() {
@@ -64,7 +64,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setDensity.
+     * Representa el método setDensity.
      * @param density de tipo double.
      */
     public void setDensity(double density) {
@@ -72,7 +72,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getDiameter.
+     * Representa el método getDiameter.
      * @return el diametro de un cuerpo.
      */
     public int getDiameter() {
@@ -80,7 +80,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setDiameter.
+     * Representa el método setDiameter.
      * @param diameter de tipo int.
      */
     public void setDiameter(int diameter) {
@@ -88,7 +88,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getDistanceSun.
+     * Representa el método getDistanceSun.
      * @return la distancia al sol.
      */
     public double getDistanceSun() {
@@ -96,7 +96,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setDistanceSun.
+     * Representa el método setDistanceSun.
      * @param distanceSun de tipo double.
      */
     public void setDistanceSun(double distanceSun) {
@@ -104,7 +104,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getIdentifier.
+     * Representa el método getIdentifier.
      * @return el identificador de un cuerpo.
      */
     public int getIdentifier() {
@@ -112,7 +112,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setIdentifier.
+     * Representa el método setIdentifier.
      * @param identifier de tipo int.
      */
     public void setIdentifier(int identifier) {
@@ -120,7 +120,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo getName.
+     * Representa el método getName.
      * @return el nombre de un cuerpo.
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class PlanetarySystem {
     }
 
     /**
-     * Representa el metodo setName.
+     * Representa el método setName.
      * @param name de tipo String.
      */
     public void setName(String name) {
